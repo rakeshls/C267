@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "author": "Niyati Singh",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": -3.03, "left": 68.09, "attrs": {} },
+    { "type": "wokwi-ds1307", "id": "rtc1", "top": 139.38, "left": 437.11, "attrs": {} },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": 100.77, "left": -130.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd2004",
+      "id": "lcd1",
+      "top": -137.75,
+      "left": 351.85,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "rtc1:GND", "uno:GND.2", "black", [ "h-37.88", "v252.67", "h366.78" ] ],
+    [ "rtc1:5V", "uno:5V", "red", [ "h-49.57", "v269.64", "h52.14" ] ],
+    [ "rtc1:SDA", "uno:A4", "green", [ "h-10.01", "v207.1", "h382.06" ] ],
+    [ "rtc1:SCL", "uno:A5", "gold", [ "h-30.69", "v180.52", "h451.28" ] ],
+    [ "encoder1:CLK", "uno:2", "magenta", [ "h22.84", "v-110.81", "h-249.19" ] ],
+    [ "encoder1:DT", "uno:3", "yellow", [ "h31.86", "v-145.12", "h-272.86" ] ],
+    [ "encoder1:SW", "uno:4", "cyan", [ "h42.01", "v-189.67", "h-293.16" ] ],
+    [ "encoder1:VCC", "uno:5V", "red", [ "h53.28", "v115.61", "h-363.07" ] ],
+    [ "encoder1:GND", "uno:GND.2", "black", [ "h35.24", "v96.27", "h-325.86" ] ],
+    [ "lcd1:SDA", "uno:A4.2", "blue", [ "h0" ] ],
+    [ "lcd1:SCL", "uno:A5.2", "green", [ "h0" ] ],
+    [ "lcd1:GND", "rtc1:GND", "black", [ "h35.8", "v281.9" ] ],
+    [ "lcd1:VCC", "rtc1:5V", "red", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
